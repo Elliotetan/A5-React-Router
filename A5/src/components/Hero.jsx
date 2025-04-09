@@ -6,7 +6,7 @@ function Hero() {
         <div className="hero">
         <div className="heroInput">
             <div className="searchBar">
-            <input type="number" value={sideB} placeholder='Search Films. . .' onChange={(event) => setC(Number(event.target.value))} required />
+            <input type="number" value={""} placeholder='Search Films. . .' required />
             </div>
             <button className="searchButton">Search</button>
 

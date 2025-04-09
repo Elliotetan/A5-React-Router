@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import "./HomeView.css";
 import Header from "../components/header";
+import Hero from "../components/Hero";
 
 function HomeView() {
   return (
     <div>
       <Header />
-      {/* <h1>Home</h1> */}
+      <Hero />
     </div>
   );
 }
