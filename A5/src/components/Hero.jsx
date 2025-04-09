@@ -6,7 +6,7 @@ function Hero() {
         <div className="hero">
         <div className="heroInput">
             <div className="searchBar">
-            <input type="number" value={""} placeholder='Search Films. . .' required />
+            <input type="String" placeholder='Search Films. . .' value={""} required />
             </div>
             <button className="searchButton">Search</button>
 
