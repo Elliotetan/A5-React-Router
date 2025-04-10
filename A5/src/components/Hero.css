@@ -3,9 +3,9 @@
     padding: 0px;
 }
 
-body {
+/* body {
     background: linear-gradient(45deg, #1E1E24, #2A2A38);
-}
+} */
 
 .hero {
     width: 96%;
@@ -17,7 +17,7 @@ body {
     text-align: center;
     padding-top: 20px;
     box-sizing: border-box;
-    background-image: url('./components/images/movieBG5.jpg');
+    background-image: url('A5/src/components/images/movieBG5.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 10%;

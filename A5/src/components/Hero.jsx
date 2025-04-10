@@ -4,14 +4,14 @@ function Hero() {
 
     return (
         <div className="hero">
-        <div className="heroInput">
-            <div className="searchBar">
-            <input type="String" placeholder='Search Films. . .' value={""} required />
-            </div>
-            <button className="searchButton">Search</button>
+            <div className="heroInput">
+                <div className="searchBar">
+                    <input type="String" placeholder='Search Films. . .' value={""} required />
+                </div>
+                <button className="searchButton">Search</button>
 
+            </div>
         </div>
-    </div>
     )
 }
 
