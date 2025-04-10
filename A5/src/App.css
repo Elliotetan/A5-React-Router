@@ -5,8 +5,8 @@
 }
 
 body {
-    background: linear-gradient(45deg, #1E1E24, #2A2A38);
-    /* background: #1E1E24; */
+    /* background: linear-gradient(45deg, #1E1E24, #2A2A38); */
+    background: #1E1E24;
 }
 
 ::-webkit-scrollbar {

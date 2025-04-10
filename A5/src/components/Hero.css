@@ -17,7 +17,7 @@
     text-align: center;
     padding-top: 20px;
     box-sizing: border-box;
-    background-image: url('A5/src/components/images/movieBG5.jpg');
+    background-image: url('./images/movieBG5.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 10%;
