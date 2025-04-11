@@ -26,7 +26,7 @@
     margin-left: 2%;
 }
 
-.heroInput {
+/* .heroInput {
     border-radius: 10%;
     display: flex;
     align-items: center;
@@ -40,14 +40,12 @@
 
 .heroInput input {
     height: 40px;
-    /* Adjust height for the input */
     font-size: 20px;
     padding: 5px;
     border-radius: 10px;
     font-weight: 1000;
     border: none;
     margin-right: 10px;
-    /* Add space between input and button */
     font-family: 'Poiret One', sans-serif;
     opacity: 80%;
     transition-duration: 0.4s;
@@ -68,7 +66,6 @@
     border-radius: 10%;
     width: 120px;
     height: 50px;
-    /* Slightly larger for better design */
     border: none;
     transition-duration: 0.1s;
     font-weight: bold;
@@ -78,4 +75,4 @@
 .searchButton:hover {
     background-color: #3C5738;
     color: #FCEFF9;
-}
+} */

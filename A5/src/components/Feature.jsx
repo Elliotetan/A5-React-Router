@@ -6,23 +6,22 @@ function Feature() {
         <div className='movieDisplayWrap'>
             <div class="movieDisplayText">Feature Films:</div>
             <div class="movieDisplay">
-                <li><img class="movies" src=""></li>
-                <li><img class="movies" src=""></li>
-                <li><img class="movies" src=""></li>
-                <li><img class="movies" src=""></li>
-                <li><img class="movies" src=""></li>
-                <li><img class="movies" src=""></li>
-                <li><img class="movies" src=""></li>
-                <li><img class="movies" src=""></li>
-                <li><img class="movies" src=""></li>
-                <li><img class="movies" src=""></li>
-                <li><img class="movies" src=""></li>
-                <li><img class="movies" src=""></li>
+                <li><img class="movies" src=""/></li>
+                <li><img class="movies" src=""/></li>
+                <li><img class="movies" src=""/></li>
+                <li><img class="movies" src=""/></li>
+                <li><img class="movies" src=""/></li>
+                <li><img class="movies" src=""/></li>
+                <li><img class="movies" src=""/></li>
+                <li><img class="movies" src=""/></li>
+                <li><img class="movies" src=""/></li>
+                <li><img class="movies" src=""/></li>
+                <li><img class="movies" src=""/></li>
+                <li><img class="movies" src=""/></li>
             </div>
         </div>
-        {/* Something about MovieTileView */}
     )
-
+/* Something about MovieTileView */
 }
 
 export default Feature;
