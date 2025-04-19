@@ -2,7 +2,7 @@ import './Header.css'
 import { useNavigate } from 'react-router-dom';
 
 function Header() {
-    const navigate = useNavigate();
+    const Navigate = useNavigate();
 
     return (
         <div className="top">

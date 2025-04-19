@@ -6,7 +6,7 @@ function LoginView() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    function Login(e) {
+    function login(e) {
         e.preventDefault();
         if (password === "YouLikeJazz") {
             navigate('/movies/genre');
@@ -19,7 +19,7 @@ function LoginView() {
         <div className={styleL.body}>
             <h1 className={styleL.loginTitle}>Login To Your Account</h1>
             <div className={styleL.loginInputContainer}>
-                <form onSubmit={Login}>
+                <form onSubmit={login}>
                     <h2>Enter Username</h2>
                     <input type="text" required />
                     <h2>Enter Password</h2>
