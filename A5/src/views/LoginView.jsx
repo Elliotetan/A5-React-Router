@@ -20,9 +20,9 @@ function LoginView() {
             <h1 className={styleL.loginTitle}>Login To Your Account</h1>
             <div className={styleL.loginInputContainer}>
                 <form onSubmit={login}>
-                    <h2>Enter Username</h2>
+                    <h2>Enter Email:</h2>
                     <input type="text" required />
-                    <h2>Enter Password</h2>
+                    <h2>Enter Password:</h2>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                     <button type="submit" className={styleL.loginButton}>Enter</button>
                 </form>
