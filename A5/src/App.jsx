@@ -6,6 +6,9 @@ import HomeView from './views/HomeView';
 import LoginView from './views/LoginView';
 import RegisterView from './views/RegisterView';
 import ErrorView from './views/ErrorView';
+import MovieView from './views/MovieView';
+import GenreView from './views/GenreView';
+import DetailView from './views/DetailView';
 
 function App() {
 
@@ -15,9 +18,11 @@ function App() {
         <Route path="/" element={<HomeView />} />
         <Route path="/login" element={<LoginView />} />
         <Route path="/register" element={<RegisterView />} />
-
-
-        <Route path="*" element={<ErrorView />}/>
+        <Route path="*" element={<ErrorView />} />
+        <Route path="/movies" element={<MovieView />}>
+          <Route path="genre" element={<GenreView />} />
+          <Route path=":id" element={<DetailView />} />
+        </Route>
       </Routes>
     </BrowserRouter>
 

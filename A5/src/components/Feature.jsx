@@ -33,7 +33,7 @@ function Feature() {
                     const movieImg = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://as2.ftcdn.net/v2/jpg/02/12/52/91/1000_F_212529193_YRhcQCaJB9ugv5dFzqK25Uo9Ivm7B9Ca.jpg';
                     return (
                         <li>
-                            <Link to="/movie">
+                            <Link to="/movies">
                                 <img className={styleF.movies} src={movieImg} alt={altMovie} />
                             </Link>
                         </li>
