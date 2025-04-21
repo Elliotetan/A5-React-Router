@@ -30,11 +30,12 @@ function Feature() {
             <div className={styleF.movieDisplayText}>Now Playing:</div>
             <div className={styleF.movieDisplay}>
                 {movieList.map((movie) => {
-                    const movieImg = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://as2.ftcdn.net/v2/jpg/02/12/52/91/1000_F_212529193_YRhcQCaJB9ugv5dFzqK25Uo9Ivm7B9Ca.jpg';
+                    const movieImg = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://img.freepik.com/premium-psd/action-movie-poster_1117895-516.jpg?w=740';
                     return (
                         <li>
-                            <Link to="/movies">
+                            <Link to={'/movies/' + movie.id}>
                                 <img className={styleF.movies} src={movieImg} alt={altMovie} />
+                                <div className={styleF.movieTitle}>{movie.title}</div>
                             </Link>
                         </li>
                     )

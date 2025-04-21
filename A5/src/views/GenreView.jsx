@@ -2,7 +2,7 @@ import styleGV from './GenreView.module.css';
 import Header from '../components/header';
 import Footer from '../components/Footer';
 import GenrePanel from '../components/GenrePanel';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -10,9 +10,9 @@ function GenreView() {
     const [movies, setMovies] = useState([]);
     const [page, setPage] = useState(1);
     const [selectedGenreId, setSelectedGenreId] = useState(28);
-    const navigate = useNavigate();
+    const altMovie = 'https://img.freepik.com/premium-psd/action-movie-poster_1117895-516.jpg?w=740';
 
-    const genresList = [
+    const genre = [
         { genre: "Action", id: 28 },
         { genre: "Adventure", id: 12 },
         { genre: "Animation", id: 16 },
@@ -25,58 +25,55 @@ function GenreView() {
         { genre: "Western", id: 37 }
     ];
 
-    useEffect(() => {
-        const fetchur = async () => {
-            const api = selectedGenreId
-                ? `https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_TMDB_KEY}&with_genres=${selectedGenreId}`
-                : `https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_TMDB_KEY}&with_genres=28`;
-
-            const response = await axios.get(api);
-            setMovies(response.data.results);
-        };
-
-        fetchur();
-    }, [selectedGenreId]);
-
-    async function moviesByPage(page) {
-
-        const response = await axios.get(
-            `https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_TMDB_KEY}d&with_genres=${selectedGenreId}&page=${page}`
-        );
+    const fetchMovies = async (page, genreId) => {
+        const api = `https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_TMDB_KEY}&with_genres=${genreId}&page=${page}`;
+        const response = await axios.get(api);
         setMovies(response.data.results);
-    }
+    };
 
+    useEffect(() => {
+        fetchMovies(page, selectedGenreId);
+    }, [page, selectedGenreId]);
 
     const handleClick = (genreId) => {
         setSelectedGenreId(genreId);
-    }
+        setPage(1); // Reset to page 1 whenever a new genre is selected
+    };
 
+    const handlePrevPage = () => {
+        if (page > 1) {
+            setPage(page - 1);
+        }
+    };
 
+    const handleNextPage = () => {
+        setPage(page + 1); 
+    };
 
     return (
         <>
             <Header />
-            <div className={styleMV.mainSection}>
-                <div className={styleMV.genrePanel}>
-                    <GenrePanel genreList={genres} genreClick={handleClick} />
-                    <div className={styleMV.paginationContainer}>
-                        <p className={styleMV.pageNumber}>Page {page}</p>
-                        <p className={pageTurning}>
-                            <a onClick={() => {
-                                if (page > 1) {
-                                    setPage(page - 1), moviesByPage(page - 1)
-
-                                }
-                            }}>&lt;--<br /></a>
-                            <a onClick={() => {
-                                if (page < 50) {
-                                    setPage(page + 1), moviesByPage(page + 1)
-                                }
-                            }}>--&gt;</a></p>
+            <div className={styleGV.mainSection}>
+                <div className={styleGV.genrePanel}>
+                    <GenrePanel genreList={genre} genreClick={handleClick} />
+                    <div className={styleGV.paginationContainer}>
+                        <p className={styleGV.pageNumber}>Page {page}</p>
+                        <div className={styleGV.pageTurning}>
+                            <button onClick={handlePrevPage} className={styleGV.pageButton}>Last Page</button>
+                            <button onClick={handleNextPage} className={styleGV.pageButton}>Next Page</button>
+                        </div>
                     </div>
                 </div>
-                <div className={styleGV.movieView}></div>
-                {/* Movie View */}
+                <div className={styleGV.movieDisplay}>
+                    {movies.map((movie) => (
+                        <li key={movie.id}>
+                            <Link to={'/movies/' + movie.id}>
+                                <img className={styleGV.movies} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={altMovie} />
+                                <div className={styleGV.movieTitle}>{movie.title}</div>
+                            </Link>
+                        </li>
+                    ))}
+                </div>
             </div>
             <Footer />
         </>
