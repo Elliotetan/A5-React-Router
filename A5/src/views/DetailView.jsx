@@ -2,7 +2,7 @@ import styleDV from './DetailView.module.css';
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Header from "../components/header";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 function DetailView() {

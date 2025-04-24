@@ -25,12 +25,6 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-
-
-
-
-
-
   )
 
   //   <div className='page'>
