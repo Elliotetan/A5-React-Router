@@ -17,6 +17,8 @@ function Header() {
                 </ul>
                 {/*  https://developer.themoviedb.org/reference/movie-top-rated-list
                 Postman that sheet*/}
+                {/* https://api.themoviedb.org/3/movie/top_rated?api_key=import.meta.env.VITE_TMDB_KEY*/}
+                {/* https://api.themoviedb.org/3/movie/popular?api_key=import.meta.env.VITE_TMDB_KEY */}
             </div>
             <div className="login">
                 <button className="loginButton" onClick={() => Navigate('/login')}>Login</button>
